@@ -439,7 +439,7 @@ themeButton.addEventListener('click', () => {
     themeButton.textContent = 'Dark Mode';
   }
 });
-
+const details = document.querySelector('#sidebar');
 const navLinks = document.querySelectorAll('nav a');
 const allSections = document.querySelectorAll('section');
 navLinks.forEach((navLink) => {
@@ -447,7 +447,7 @@ navLinks.forEach((navLink) => {
     event.preventDefault();
     const identifier = navLink.dataset.section;
     showSection(identifier);
-    const details = document.querySelector('#sidebar');
+    //const details = document.querySelector('#sidebar');
     if (openNav.classList.contains('close')) {
       openNav.classList.remove('close');
       details.open = false;
@@ -474,3 +474,12 @@ function showSection(selectedSection) {
 }
 const dashboard = document.getElementById('dashboard');
 showSection(dashboard.id);
+document.addEventListener('click', () => {
+  if (
+    !event.target.closest('#sidebar') &&
+    openNav.classList.contains('close')
+  ) {
+    openNav.classList.remove('close');
+    details.open = false;
+  }
+});
