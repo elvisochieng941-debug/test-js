@@ -383,3 +383,217 @@ body.dark-theme .summarruButton span,
 body.dark-theme .SecondsummarruButton span {
   background-color: white;
 }
+/**/
+/* Responsive dashboard layout */
+.dashboard-div {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  width: 95%;
+  height: auto;
+  padding: 10px;
+}
+
+.dp-div {
+  width: 100%;
+  height: 130px;
+}
+
+/* Responsive student cards */
+.createdCard {
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  min-height: 400px;
+  padding: 15px;
+  overflow-wrap: anywhere;
+}
+
+/* Responsive form inputs */
+.input-div {
+  width: 80%;
+}
+
+.input-div input {
+  width: 100%;
+}
+
+/* Mobile layout */
+@media (max-width: 768px) {
+  .dashboard-div {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  #studentCard {
+    grid-template-columns: 1fr;
+  }
+
+  .createdCard {
+    max-width: 100%;
+  }
+
+  nav {
+    width: 100%;
+    max-width: 200px;
+  }
+}
+
+/* Small mobile screens */
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .dashboard-div {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  .dp-div {
+    height: 110px;
+  }
+
+  form {
+    width: 95%;
+  }
+
+  .input-div {
+    width: 85%;
+  }
+
+  .createdCard {
+    min-width: 0;
+    padding: 12px;
+  }
+
+  .viewButton,
+  .editButton,
+  .toggleStatus,
+  .deleteButton {
+    margin: 5px;
+  }
+}
+/**/
+#studentDetails {
+  max-width: 750px;
+  margin: 1.5rem auto;
+  padding: 1.5rem;
+
+  border-radius: 18px;
+  border: 2px solid #4f8cff;
+
+  background: #ffffff;
+  color: #111827;
+
+  /* Strong visible shadow */
+  box-shadow:
+    0 10px 20px rgba(0, 0, 0, 0.15),
+    0 15px 40px rgba(0, 0, 0, 0.2),
+    0 0 15px rgba(79, 140, 255, 0.5);
+
+  animation: glowPulse 3s infinite ease-in-out;
+  transition: transform 0.3s ease;
+}
+
+#studentDetails:hover {
+  transform: translateY(-4px);
+}
+
+#studentDetails h4 {
+  text-align: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.8rem;
+
+  color: #2563eb;
+  border-bottom: 2px solid rgba(79, 140, 255, 0.3);
+
+  text-shadow:
+    0 0 5px rgba(79, 140, 255, 0.5),
+    0 0 10px rgba(79, 140, 255, 0.3);
+}
+
+#studentDetails p {
+  margin: 0.8rem 0;
+  padding: 0.8rem;
+
+  border-radius: 10px;
+
+  background: rgba(79, 140, 255, 0.08);
+
+  box-shadow: inset 0 0 5px rgba(79, 140, 255, 0.15);
+}
+
+#studentDetails strong {
+  color: #2563eb;
+}
+
+.closeDetails {
+  display: block;
+  margin: 1.5rem auto 0;
+
+  padding: 0.8rem 1.4rem;
+
+  border: none;
+  border-radius: 10px;
+
+  background: #ef4444;
+  color: white;
+
+  font-weight: bold;
+  cursor: pointer;
+
+  box-shadow:
+    0 0 10px rgba(239, 68, 68, 0.5),
+    0 0 20px rgba(239, 68, 68, 0.3);
+
+  transition: all 0.3s ease;
+}
+
+.closeDetails:hover {
+  background: #dc2626;
+  transform: scale(1.05);
+}
+
+/* Animated glow */
+@keyframes glowPulse {
+  0% {
+    box-shadow:
+      0 10px 20px rgba(0, 0, 0, 0.15),
+      0 15px 40px rgba(0, 0, 0, 0.2),
+      0 0 10px rgba(79, 140, 255, 0.4);
+  }
+
+  50% {
+    box-shadow:
+      0 10px 20px rgba(0, 0, 0, 0.15),
+      0 15px 40px rgba(0, 0, 0, 0.2),
+      0 0 30px rgba(79, 140, 255, 0.9),
+      0 0 50px rgba(79, 140, 255, 0.5);
+  }
+
+  100% {
+    box-shadow:
+      0 10px 20px rgba(0, 0, 0, 0.15),
+      0 15px 40px rgba(0, 0, 0, 0.2),
+      0 0 10px rgba(79, 140, 255, 0.4);
+  }
+}
+
+/* Dark Mode */
+.dark-theme #studentDetails {
+  background: #1e293b;
+  color: #f8fafc;
+  border-color: #60a5fa;
+}
+
+.dark-theme #studentDetails h4 {
+  color: #93c5fd;
+}
+
+.dark-theme #studentDetails p {
+  background: rgba(96, 165, 250, 0.12);
+}
+
+.dark-theme #studentDetails strong {
+  color: #93c5fd;
+}
