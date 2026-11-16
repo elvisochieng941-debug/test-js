@@ -473,6 +473,9 @@ body.dark-theme .SecondsummarruButton span {
     margin: 5px;
   }
 }
+footer {
+  text-align: center;
+}
 /*AI code*/
 #studentDetails {
   max-width: 750px;
